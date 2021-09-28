@@ -21,7 +21,7 @@ export default class CardsList {
   buildCardsList(wrapper, cardsData) {
     if (cardsData.length < 1) return;
 
-    Array.from(cardsData).forEach((item) => {
+    cardsData.forEach((item) => {
       let { element } = new this.Component(item);
 
       if (element) {
