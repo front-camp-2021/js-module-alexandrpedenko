@@ -24,6 +24,7 @@ export default class Card {
   render() {
     const cardWrapper = document.createElement("div");
     cardWrapper.setAttribute("data-element", "body");
+    cardWrapper.setAttribute("id", this.id);
     cardWrapper.classList.add("product-wrapper");
     cardWrapper.innerHTML = this.buildCard();
 
@@ -63,10 +64,14 @@ export default class Card {
     `;
   }
 
-  destroy() {
+  remove() {
     if (this.element) {
       this.element.remove();
-      this.element = null;
     }
+  }
+
+  destroy() {
+    this.remove();
+    this.element = null;
   }
 }

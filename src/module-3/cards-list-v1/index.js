@@ -1,11 +1,11 @@
-import Card from "../../module-2/card/index.js";
+// import Card from "../../module-2/card/index.js";
 
 export default class CardsList {
   element;
 
-  constructor(data = [], Card) {
+  constructor({ data = [], Component = {} }) {
     this.data = data;
-    this.card = Card;
+    this.Component = Component;
 
     this.render();
   }
@@ -15,14 +15,14 @@ export default class CardsList {
     listWrapper.classList.add("product-list");
 
     this.element = listWrapper;
-    this.buildCardsLits(this.element, this.data);
+    this.buildCardsList(this.element, this.data);
   }
 
-  buildCardsLits(wrapper, cardsData) {
+  buildCardsList(wrapper, cardsData) {
     if (cardsData.length < 1) return;
 
     Array.from(cardsData).forEach((item) => {
-      let { element } = new Card(item);
+      let { element } = new this.Component(item);
 
       if (element) {
         wrapper.append(element);
@@ -35,13 +35,17 @@ export default class CardsList {
     this.element.innerHTML = "";
     this.data = updateData;
 
-    this.buildCardsLits(this.element, this.data);
+    this.buildCardsList(this.element, this.data);
+  }
+
+  remove() {
+    if (this.element) {
+      this.element.remove();
+    }
   }
 
   destroy() {
-    if (this.element) {
-      this.element.remove();
-      this.element = null;
-    }
+    this.remove();
+    this.element = null;
   }
 }
