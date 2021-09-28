@@ -1,6 +1,6 @@
 # FiltersList component
 
-Необхідно реалізувати FiltersList компонент який буде відповідати за відображення фільтрів 
+Необхідно реалізувати FiltersList компонент який буде відповідати за відображення фільтрів
 для списку товарів.
 
 ![preview](preview.png)
@@ -9,9 +9,8 @@
 
 ```js
 {
- title = '',
- list = []
-} 
+  (title = ""), (list = []);
+}
 ```
 
 Де `title` - це назва фільтру, а `list` це масив об'єктів наступного виду:
@@ -19,24 +18,28 @@
 ```js
 [
   {
-    value: 'category=cell_phones',
-    title: 'Cell Phones',
+    value: "category=cell_phones",
+    title: "Cell Phones",
   },
   {
-    value: 'category=computer_tablets',
-    title: 'Computers & Tablets',
+    value: "category=computer_tablets",
+    title: "Computers & Tablets",
   },
   {
-    value: 'category=cell_phones_accessories',
-    title: 'Cell Phone Accessories',
-  }
-]
+    value: "category=cell_phones_accessories",
+    title: "Cell Phone Accessories",
+  },
+];
 ```
 
-В об'єкті `category` - це назва поля по якому буде відбуватись фільтр, a `=cell_phones` - значення 
+В об'єкті `category` - це назва поля по якому буде відбуватись фільтр, a `=cell_phones` - значення
 цього фільтру.
 
-## Події компонента 
+## Події компонента
 
 При активації фільтру, компонент повинен зробити `dispatch` події `add-filter`,
 а при деактивації фільтру - події `remove-filter` зі значенням `value`
+
+## Mockup
+
+<https://www.figma.com/file/IhXnvrCvkLAtJYOs7aFx4N/vuesax-ecommerce-page-grid-light>
