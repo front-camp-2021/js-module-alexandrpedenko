@@ -1,6 +1,6 @@
 # CardsList
 
-Необхідно реалізувати CardsList компонент, 
+Необхідно реалізувати CardsList компонент,
 який буде відповідати за відображення списку карточок товарів.
 
 ![preview](preview.png)
@@ -9,8 +9,7 @@
 
 ```js
 {
-  data = [], 
-  Component = {}
+  (data = []), (Component = {});
 }
 ```
 
@@ -30,16 +29,13 @@
     "price": 15999,
     "category": "laptops",
     "brand": "acer"
-  },
+  }
 ]
 ```
 
 В комопненті треба передбачити метод `update`, який буде приймати, так само як
-`constructor`, масив об'єктів і оновлювати відображення товарів. 
-<<<<<<< HEAD
-=======
+`constructor`, масив об'єктів і оновлювати відображення товарів.
 
 ## Mockup
 
 <https://www.figma.com/file/IhXnvrCvkLAtJYOs7aFx4N/vuesax-ecommerce-page-grid-light>
->>>>>>> abda116e8e8be97b694927c5a12d4f41331f012e
