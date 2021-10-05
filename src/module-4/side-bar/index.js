@@ -1,4 +1,5 @@
 import FiltersList from "../filters-list/index.js";
+import DoubleSlider from "../../module-5/double-slider/index.js";
 
 export default class SideBar {
   element;
@@ -25,9 +26,27 @@ export default class SideBar {
       list: this.brandFilter,
     });
 
+    const priceFilterItem = new DoubleSlider({
+      min: 0,
+      max: 85000,
+      filterName: "price",
+      formatValue(value) {
+        return `${value} UAH`;
+      },
+    });
+
+    const ratingFilterItem = new DoubleSlider({
+      min: 0,
+      max: 5,
+      precision: 2,
+      filterName: "rating",
+    });
+
     this.sidebarItems = {
+      priceFilterItem,
       brandFilterItem,
       categoryFilterItem,
+      ratingFilterItem,
     };
   }
 
