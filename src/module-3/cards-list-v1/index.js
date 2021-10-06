@@ -19,15 +19,20 @@ export default class CardsList {
   }
 
   buildCardsList(wrapper, cardsData) {
-    if (cardsData.length < 1) return;
+    if (cardsData.length < 1) {
+      const noProducts = document.createElement("h2");
+      noProducts.classList.add("product-wrapper");
+      noProducts.innerText = "No products found";
+      wrapper.append(noProducts);
+    } else {
+      cardsData.forEach((item) => {
+        let { element } = new this.Component(item);
 
-    cardsData.forEach((item) => {
-      let { element } = new this.Component(item);
-
-      if (element) {
-        wrapper.append(element);
-      }
-    });
+        if (element) {
+          wrapper.append(element);
+        }
+      });
+    }
   }
 
   update(updateData) {
