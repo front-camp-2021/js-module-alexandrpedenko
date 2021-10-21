@@ -2,8 +2,8 @@ export const debounce = (fn, delay = 0) => {
   let timeout;
 
   return function executedFunction() {
-    let context = this;
-    let args = arguments;
+    const context = this;
+    const args = arguments;
 
     let later = function () {
       timeout = null;

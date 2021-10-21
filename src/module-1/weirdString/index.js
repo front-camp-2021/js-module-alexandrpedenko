@@ -3,10 +3,10 @@ export const weirdString = (str = "") => {
 
   return str
     .split(" ")
-    .map((element) => {
+    .map((word) => {
       return (
-        element.slice(0, element.length - 1).toUpperCase() +
-        element[element.length - 1].toLowerCase()
+        word.slice(0, word.length - 1).toUpperCase() +
+        word[word.length - 1].toLowerCase()
       );
     })
     .join(" ");
