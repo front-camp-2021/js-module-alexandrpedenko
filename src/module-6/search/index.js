@@ -16,9 +16,9 @@ export default class Search {
 
   get searchTemplate() {
     return `
-      <form class="search__form">
+      <form class="search__form" >
         <input type="text" name="search" placeholder="Search" class="search__form-input" data-element="search">
-        <button type="submit" class="search__form-button">
+        <button class="search__form-button" data-element="submit">
           <img src="./images/icons/search.svg" alt="Search">
         </button>
       </form>
@@ -45,6 +45,7 @@ export default class Search {
 
   initializeEvents() {
     this.subElements.search.addEventListener("input", this.keyUpHandler);
+    this.element.addEventListener("submit", this.onClick);
   }
 
   dispatchEvent(searchQuery) {
@@ -61,6 +62,13 @@ export default class Search {
 
     this.dispatchEvent(searchQuery);
   }, 500);
+
+  onClick = (event) => {
+    event.preventDefault();
+    const searchQuery = this.subElements.search.value.trim();
+
+    this.dispatchEvent(searchQuery);
+  };
 
   clear() {
     this.element.reset();

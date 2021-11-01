@@ -26,7 +26,7 @@ export default class CardsList {
       wrapper.append(noProducts);
     } else {
       cardsData.forEach((item) => {
-        let { element } = new this.Component(item);
+        const { element } = new this.Component(item);
 
         if (element) {
           wrapper.append(element);
@@ -36,7 +36,10 @@ export default class CardsList {
   }
 
   update(updateData) {
-    if (!this.element) return;
+    if (!this.element) {
+      return;
+    }
+
     this.element.innerHTML = "";
     this.data = updateData;
 
