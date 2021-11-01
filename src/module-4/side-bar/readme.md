@@ -10,6 +10,7 @@
 
 Для ініціалізації DoubleSlider фільтру по ціні, необхідно використати
 наступні значення:
+
 ```
 {
   min: 0,
@@ -20,6 +21,7 @@
 
 Для ініціалізації DoubleSlider фільтру по рейтінгу, необхідно використати
 наступні значення:
+
 ```
 {
   min: 0,
@@ -31,9 +33,13 @@
 
 Компонент SideBar має імпортувати наступні компоненти:
 
-* DoubleSlider
-* FilterList
+- DoubleSlider
+- FilterList
 
 ## Події компонента
 
 При натисканні на кнопку "clear filters", компонент повинен зробити `dispatch` події `clear-filters`
+
+## Mockup
+
+<https://www.figma.com/file/IhXnvrCvkLAtJYOs7aFx4N/vuesax-ecommerce-page-grid-light>
